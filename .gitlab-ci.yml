@@ -1,0 +1,55 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:8
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+  - node_modules/
+
+before_script:
+  - yarn
+
+stages:
+  - build
+  - test
+  - deploy
+
+
+# Build Stage
+# no need to build :)
+
+# Test Stage
+jest_test_coverage:
+  script:
+   - npm test --coverage
+  artifacts:
+    paths:
+      - coverage/
+
+eslint:
+  script:
+    - npm run eslint
+
+# Publish test result for master branch
+pages:
+  stage: deploy
+  dependencies:
+    - jest_test_coverage
+  script:
+    - mv coverage/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
+
+# Deploy Stage
+# deploy_app:
+#   stage: deploy
+#   script:
+#     -
+#   only:
+#     - master

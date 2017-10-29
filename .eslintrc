@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "node"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
+  "rules": {
+    "indent": ["error", 4],
+    "no-console": "off",
+    "node/exports-style": [
+      "error",
+      "module.exports"
+    ],
+    "node/no-missing-require": ["error", {
+      "allowModules": ["http2"]
+    }]
+  }
+}
