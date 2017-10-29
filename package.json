@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "cp -n .env.ci .env || true",
     "lint": "eslint src test",
-    "test": "jest",
+    "test": "jest --coverage --forceExit",
     "start": "forever start src/server.js",
     "stop": "forever stop src/server.js",
     "restart": "forever restart src/server.js",
