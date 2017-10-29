@@ -64,7 +64,7 @@ footer?
 ```
 
 Where type can only be 
-```
+```js
 [
     'feat', // adding, completing a new feature
     'fix', // bug fix
