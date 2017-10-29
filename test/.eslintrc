@@ -1,15 +1,15 @@
 {
-    "env": {
-        "jest/globals": true
-    },
-    "plugins": [
-        "node",
-        "jest"
-    ],
-    "extends": [
-        "eslint:recommended",
-        "plugin:node/recommended",
-        "plugin:jest/recommended",
-        "airbnb-base"
-    ]
+  "env": {
+    "jest/globals": true
+  },
+  "plugins": [
+    "node",
+    "jest"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:jest/recommended",
+    "airbnb-base"
+  ]
 }
