@@ -13,7 +13,8 @@
     "start": "forever start src/server.js",
     "stop": "forever stop src/server.js",
     "restart": "forever restart src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "dev-test": "jest --watch --forceExit"
   },
   "pre-commit": [
     "lint",

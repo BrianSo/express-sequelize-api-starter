@@ -23,14 +23,14 @@ stages:
 # Test Stage
 jest_test_coverage:
   script:
-   - npm test --coverage
+   - yarn test
   artifacts:
     paths:
       - coverage/
 
 eslint:
   script:
-    - npm run lint
+    - yarn run lint
 
 # Publish test result for master branch
 pages:

@@ -10,4 +10,14 @@ describe('app', () => {
       .expect(200);
     expect(res.body).toBe('online');
   });
+
+  it('has user route', async () => {
+    await request.get('/user')
+      .expect(200);
+  });
+
+  it('has account route', async () => {
+    await request.get('/account')
+      .expect(200);
+  });
 });
