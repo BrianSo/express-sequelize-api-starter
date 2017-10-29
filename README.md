@@ -38,12 +38,42 @@ yarn run lint
 5. or other coding tool with similar features of 3.2 - 3.4
 
 # Coding guide
-
-1. Placing files
+1. Git commits
+    1. This project uses [commitlint] (https://github.com/marionebl/commitlint)
+    2. [commits must follow this format] (#commit-formats)
+    ```
+    type(scope?): subject
+    body?
+    footer?
+    ```
+    3. a commit must focus on one topic only
+    4. a commit should not involve too much files (>5 files)
+2. Placing files
     1. never use index.js
     2. [favor module hierarchy instead of file type] (#favor-module-hierarchy-instead-of-file-type)
 
 # Coding guide details
+
+### Commit formats
+
+The format of a commit must be
+```
+type(scope?): subject
+body?
+footer?
+```
+
+Where type can only be 
+```
+[
+    'feat', // adding, completing a new feature
+    'fix', // bug fix
+    'docs', // changes to documentation
+    'refactor', // refactoring production code, formatting, missing semi colons,
+    'test', // adding missing tests, refactoring tests; no production code change
+    'config', // updating grunt tasks etc; no production code change
+]
+```
 
 ### favor module hierarchy instead of file type
 

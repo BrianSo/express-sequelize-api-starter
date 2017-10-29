@@ -7,6 +7,8 @@
   "author": "BrianSo",
   "license": "ISC",
   "scripts": {
+    "precommit": "npm run lint && npm run test",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "postinstall": "cp -n .env.ci .env || true",
     "lint": "eslint src test",
     "test": "jest --coverage --forceExit",
@@ -16,10 +18,6 @@
     "dev": "nodemon src/server.js",
     "dev-test": "jest --watch --forceExit"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "jest": {
     "moduleFileExtensions": [
       "js"
@@ -43,14 +41,16 @@
     "supertest": "^3.0.0"
   },
   "devDependencies": {
+    "commitlint": "^4.2.2",
+    "conventional-changelog-lint-config-canonical": "^1.0.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-node": "^5.2.1",
+    "husky": "^0.14.3",
     "jest": "^21.2.1",
-    "nodemon": "^1.12.1",
-    "pre-commit": "^1.2.2"
+    "nodemon": "^1.12.1"
   },
   "engines": {
     "node": ">=8.8.1"
