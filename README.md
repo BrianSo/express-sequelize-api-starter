@@ -1,6 +1,6 @@
 # Express API Starter
 [![pipeline status](https://gitlab.com/wsws/express-api-starter/badges/master/pipeline.svg)](https://gitlab.com/wsws/express-api-starter/commits/master)
-[![coverage report](https://gitlab.com/wsws/express-api-starter/badges/master/coverage.svg)](https://gitlab.com/wsws/express-api-starter/commits/master)
+[![coverage report](https://gitlab.com/wsws/express-api-starter/badges/master/coverage.svg)](https://wsws.gitlab.io/express-api-starter/lcov-report)
 
 # Requirements
 - Node.js 8
