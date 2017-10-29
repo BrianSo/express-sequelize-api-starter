@@ -9,6 +9,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:node/recommended",
-        "plugin:jest/recommended"
+        "plugin:jest/recommended",
+        "airbnb-base"
     ]
 }

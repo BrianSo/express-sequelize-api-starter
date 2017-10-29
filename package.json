@@ -8,14 +8,17 @@
     "license": "ISC",
     "scripts": {
         "postinstall": "cp -n .env.ci .env || true",
-        "lint": "eslint src",
+        "lint": "eslint src test",
         "test": "jest",
         "start": "forever start src/server.js",
         "stop": "forever stop src/server.js",
         "restart": "forever restart src/server.js",
         "dev": "nodemon src/server.js"
     },
-    "pre-commit": ["lint", "test"],
+    "pre-commit": [
+        "lint",
+        "test"
+    ],
     "jest": {
         "moduleFileExtensions": [
             "js"
@@ -40,6 +43,8 @@
     },
     "devDependencies": {
         "eslint": "^4.10.0",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.8.0",
         "eslint-plugin-jest": "^21.2.0",
         "eslint-plugin-node": "^5.2.1",
         "jest": "^21.2.1",

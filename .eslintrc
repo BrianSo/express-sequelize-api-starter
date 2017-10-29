@@ -4,10 +4,10 @@
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:node/recommended"
+    "plugin:node/recommended",
+    "airbnb-base"
   ],
   "rules": {
-    "indent": ["error", 4],
     "no-console": "off",
     "node/exports-style": [
       "error",
