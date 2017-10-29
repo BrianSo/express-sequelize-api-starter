@@ -30,7 +30,7 @@ jest_test_coverage:
 
 eslint:
   script:
-    - npm run eslint
+    - npm run lint
 
 # Publish test result for master branch
 pages:
