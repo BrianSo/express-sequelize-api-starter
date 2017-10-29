@@ -15,6 +15,7 @@
         "restart": "forever restart src/server.js",
         "dev": "nodemon src/server.js"
     },
+    "pre-commit": ["lint", "test"],
     "jest": {
         "moduleFileExtensions": [
             "js"
