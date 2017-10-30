@@ -48,6 +48,7 @@ yarn run lint
     ```
     3. a commit must focus on one topic only
     4. a commit should not involve too much files (>5 files)
+    5. a commit subject should start with a present tense verb (except a fix commit)
 2. Placing files
     1. never use index.js
     2. [favor module hierarchy instead of file type] (#favor-module-hierarchy-instead-of-file-type)
