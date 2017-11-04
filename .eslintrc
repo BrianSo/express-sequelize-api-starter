@@ -8,7 +8,11 @@
     "airbnb-base"
   ],
   "rules": {
+    "camelcase": "error",
+    "no-restricted-syntax": "warn",
+    "no-await-in-loop": "off",
     "no-console": "off",
+    "arrow-parens": ["error","always"],
     "node/exports-style": [
       "error",
       "module.exports"
