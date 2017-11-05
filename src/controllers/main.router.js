@@ -4,7 +4,7 @@ const accountRouter = require('./account/account.router');
 
 const router = Router();
 
-router.use('/account', userRouter);
-router.use('/user', accountRouter);
+router.use('/account', accountRouter);
+router.use('/user', userRouter);
 
 module.exports = router;

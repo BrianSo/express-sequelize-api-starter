@@ -5,17 +5,10 @@
 // const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const dotenv = require('dotenv');
 const i18nMiddleware = require('./middlewares/i18n');
 const errorHandler = require('./middlewares/errorHandler');
 const notFoundHandler = require('./middlewares/404');
 const mainRouter = require('./controllers/main.router');
-
-if (!process.env.CI) {
-  dotenv.config({ path: '.env' });
-} else {
-  dotenv.config({ path: '.env.ci' });
-}
 
 const app = express();
 
