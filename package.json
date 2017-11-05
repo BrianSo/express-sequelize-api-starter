@@ -11,12 +11,12 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "postinstall": "cp -n .env.ci .env || true",
     "lint": "eslint src test",
-    "test": "jest --coverage --forceExit",
+    "test": "cross-env TEST=true jest --coverage --forceExit",
     "start": "forever start src/server.js",
     "stop": "forever stop src/server.js",
     "restart": "forever restart src/server.js",
     "dev": "nodemon src/server.js",
-    "dev-test": "jest --watch --forceExit"
+    "dev-test": "cross-env TEST=true jest --watch --forceExit"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -39,11 +39,14 @@
     "i18next": "^10.0.7",
     "moment": "^2.19.1",
     "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.20.1",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
     "commitlint": "^4.2.2",
     "conventional-changelog-lint-config-canonical": "^1.0.0",
+    "cross-env": "^5.1.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",

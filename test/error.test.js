@@ -1,3 +1,4 @@
+require('../src/utils/configEnv');
 const supertest = require('supertest');
 const app = require('../src/app');
 

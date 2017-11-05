@@ -8,6 +8,7 @@
     "airbnb-base"
   ],
   "rules": {
+    "strict": ["error", "global"],
     "camelcase": "error",
     "no-restricted-syntax": "warn",
     "no-await-in-loop": "off",
