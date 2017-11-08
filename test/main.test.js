@@ -5,10 +5,6 @@ const models = require('../src/utils/loadModels');
 
 const request = supertest(app);
 
-beforeAll(async () => {
-  await Promise.all(Object.values(models).map(model => model.sync({ force: true })));
-});
-
 describe('app', () => {
   it('should work', async () => {
     const res = await request.get('/')
@@ -30,6 +26,10 @@ describe('app', () => {
 describe('user', () => {
   it('should create user', async () => {
     const res = await request.post('/user/register')
+      .send({
+        name: 'test_user',
+        password: 'fe6969c3fc20c6763c057b1b16ca717c549e9ec2',
+      })
       .expect(200);
 
     expect(res.body.name).toBe('test_user');

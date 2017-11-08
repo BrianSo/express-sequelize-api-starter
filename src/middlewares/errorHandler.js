@@ -3,9 +3,15 @@ module.exports = async (error, req, res, next) => {
   if (error.errorCode) {
     res.status(error.status);
 
+    // Create full path for joi errors
+    if (error.extra.isJoi) {
+      // eslint-disable-next-line no-param-reassign
+      error.extra.errorPath = error.extra.details[0].path.join('');
+    }
+
     const errorToSend = Object.assign({
       errorCode: error.errorCode,
-      userMessage: req.t(`errors:${error.userMessage}`),
+      userMessage: req.t(`errors:${error.userMessage}`, error.extra),
       developerMessage: error.message,
       extra: error.extra,
     });

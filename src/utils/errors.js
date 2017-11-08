@@ -5,14 +5,22 @@ const ErrorTypes = {
     userMessage: 'RESOURCE_NOT_FOUND',
     status: 404,
   },
+  VALIDATION_ERROR: {
+    errorCode: 'VALIDATION_ERROR',
+    userMessage: 'VALIDATION_ERROR',
+    status: 400,
+  },
 };
 
 /**
- *
+ * Create an error for stack trace
  * @param {ErrorType} errorType
  * @param {any?} extra
+ * @param {override?} extra
  */
-const createError = (errorType, extra) => {
+const createError = (incomeErrorType, extra, override) => {
+  const errorType = Object.assign({}, incomeErrorType, override);
+
   const developerMessage = errorType.developerMessage || errorType.userMessage;
   const error = new Error(developerMessage);
 
@@ -21,11 +29,13 @@ const createError = (errorType, extra) => {
   error.userMessage = errorType.userMessage;
   error.status = errorType.status;
 
-  if (extra) {
-    error.extra = extra;
-  }
+  error.extra = extra || {};
   return error;
 };
+
+function createJoiError(joiError) {
+  return createError(ErrorTypes.VALIDATION_ERROR, { isJoi: true, details: joiError.details });
+}
 
 /**
  * Wrap a request handler to catch errors from the requestHandler and pass it to next()
@@ -42,5 +52,6 @@ const catchErrorRoute = (requestHandler) => async (req, res, next) => {
 module.exports = {
   ErrorTypes,
   createError,
+  createJoiError,
   catchErrorRoute,
 };
