@@ -26,4 +26,26 @@ describe('app', () => {
     expect(resOfZhLang.body.userMessage).toBeTruthy();
     expect(resOfZhLang.body.userMessage).toBe('找不到您請求的資源');
   });
+
+
+  it('validate request by joi', async () => {
+    await request.post('/user/register')
+      .send({
+        name: 'test_user',
+        password: '7b598f3c83bff541c5ddf0152ed6ce3c8eb954a6',
+      })
+      .expect(200);
+    await request.post('/user/register')
+      .send({
+        name: 'test_user',
+        password: '7b598f3c83bff541c5ddf0152ed6ce3c8eb954a',
+      })
+      .expect(400);
+    await request.post('/user/register')
+      .send({
+        name: 'yo',
+        password: '7b598f3c83bff541c5ddf0152ed6ce3c8eb954a6',
+      })
+      .expect(400);
+  });
 });

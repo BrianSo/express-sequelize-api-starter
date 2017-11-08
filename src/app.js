@@ -5,6 +5,7 @@
 // const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const i18nMiddleware = require('./middlewares/i18n');
 const errorHandler = require('./middlewares/errorHandler');
 const notFoundHandler = require('./middlewares/404');
@@ -15,6 +16,7 @@ const app = express();
 // middlewares
 app.use(morgan('dev'));
 app.use(i18nMiddleware);
+app.use(bodyParser());
 
 app.get('/', (req, res) => {
   res.json('online');
