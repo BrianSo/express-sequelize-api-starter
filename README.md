@@ -5,6 +5,28 @@
 # Requirements
 - Node.js 8
 
+# Ingredients
+1. express
+2. sequelize
+3. joi request validation
+4. i18n
+5. error handling
+6. Jest testing framework
+7. eslint
+8. commitlint
+9. Travis CI, Gitlab CI ready
+
+# Opt out
+### Commit hooks
+You may not be comfortable for the commit hook. You can remove eslint, commitlint checking by `yarn remove husky`. For more information about commit hook, please take a look at [husky](https://www.npmjs.com/package/husky)
+### Sequelize
+You may want to use other orm library like mongoose. To remove sequelize, you may do the following:
+1. remove all model files under `/src/models`
+2. update the bootstrap method in `src/server.js` to remove sequelize setups
+3. remove `src/utils/dbConnection.js`, `src/utils/loadModels.js`
+4. update `.env`
+5. update `test/setup.js` to remove sequelize setups
+
 # Getting started
 ```sh
 git clone git@gitlab.com:wsws/express-api-starter.git
