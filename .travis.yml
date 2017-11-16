@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  directories:
+    - node_modules
+
+services:
+  - mysql
+
+addons:
+  hosts:
+    - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test_db;'
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('AK0CvoP1bQ1TEdjFc78kE') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+
+script:
+  - yarn run lint
+  - yarn test
+
+after_script: "yarn add coveralls@2.10.0 && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"

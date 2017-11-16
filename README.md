@@ -1,6 +1,6 @@
 # Express API Starter
-[![pipeline status](https://gitlab.com/wsws/express-api-starter/badges/master/pipeline.svg)](https://gitlab.com/wsws/express-api-starter/commits/master)
-[![coverage report](https://gitlab.com/wsws/express-api-starter/badges/master/coverage.svg)](https://wsws.gitlab.io/express-api-starter/lcov-report)
+[![Build Status](https://travis-ci.org/BrianSo/express-sequelize-api-starter.svg?branch=master)](https://travis-ci.org/BrianSo/express-sequelize-api-starter)
+[![Coverage Status](https://coveralls.io/repos/github/BrianSo/express-sequelize-api-starter/badge.svg?branch=master)](https://coveralls.io/github/BrianSo/express-sequelize-api-starter?branch=master)
 
 # Requirements
 - Node.js 8
